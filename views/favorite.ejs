@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke</title>
+</head>
+
+<body>
+    <header>
+        <h1>Jokes about us(Programmers XD)</h1>
+        <p>A website to remind you with your favorite jokes</p>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/favorite">Favorite Jokes</a></li>
+                <li><a href="/random">Random Joke</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>You didn't add any thing </h2>
+        <section>
+            <div>
+                <h2>Joke #</h2>
+                <p><%= jokes.type %></p>
+                <p><%= jokes.setup %></p>
+                <p><%= jokes.punchline %></p>
+                <form action="/joke/<%= jokes.id %>?_method=put" method="post">
+                    <input type="text" name="type" value="<%= jokes.type %>">
+                    <input type="text" name="setup" value="<%= jokes.setup %>">
+                    <input type="text" name="punchline" value="<%= jokes.punchline %>">
+                    <button>Update Joke</button>
+                </form>
+                <form action="/joke/<%= jokes.id %>?_method=delete" method="post">
+                    <button>Delete Joke</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
